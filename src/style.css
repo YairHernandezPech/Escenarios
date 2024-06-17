@@ -1,0 +1,138 @@
+/* General styles for seats */
+.seat {
+  width: 28px;
+  height: 28px;
+  margin: 3px;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  line-height: 28px;
+  border-radius: 20%;
+  transition: background-color 0.3s;
+  border: 1px solid rgb(141, 137, 137);
+  color: white;
+}
+
+.available {
+  background-color: transparent;
+}
+
+.unavailable {
+  background-color: #4781FF;
+}
+
+/* Stage and seats container */
+.stage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 700px;/* Ajuste el ancho según sea necesario */
+  margin: auto;
+}
+.seats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: calc(15 * 45px); /* 15 asientos * (28px ancho + 10px gap) */
+  margin: auto;
+}
+
+.stage {
+  position: relative;
+  width: 700px;
+  /* Ajuste el ancho según sea necesario */
+  height: 200px;
+  background-color: rgb(139, 134, 134);
+  margin-bottom: 20px;
+  border-radius: 1px;
+  margin: 60px;
+  /* Centra el contenedor */
+}
+
+.line {
+  position: absolute;
+  background-color: rgb(139, 134, 134);
+  width: 5px;
+}
+
+.line.left1,
+.line.left2,
+.line.left3 {
+  height: 180px;
+  left: -15px;
+}
+
+.line.left1 {
+  top: 0;
+}
+
+.line.left2 {
+  top: 10px;
+  left: -25px;
+}
+
+.line.left3 {
+  top: 20px;
+  left: -35px;
+}
+
+.line.right1,
+.line.right2,
+.line.right3 {
+  height: 180px;
+  right: -15px;
+}
+
+.line.right1 {
+  top: 0;
+}
+
+.line.right2 {
+  top: 10px;
+  right: -25px;
+}
+
+.line.right3 {
+  top: 20px;
+  right: -35px;
+}
+
+.square {
+  position: absolute;
+  background-color: rgb(139, 134, 134);
+  width: 30px;
+  height: 30px;
+  bottom: -45px;
+}
+
+.square.left {
+  left: -15px;
+}
+
+.square.right {
+  right: -15px;
+}
+
+.base-line {
+  position: absolute;
+  background-color: rgb(139, 134, 134);
+  width: 620px;
+  height: 6px;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottom-rect {
+  position: absolute;
+  background-color: rgb(139, 134, 134);
+  width: 350px;
+  height: 50px;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
