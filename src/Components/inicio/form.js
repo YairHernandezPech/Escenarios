@@ -13,7 +13,7 @@ const Formulario = () => {
                 navigation('/escenario1');
                 break;
             case '2':
-                navigation('/documents');
+                navigation('/escenario2');
                 break;
             case '3':
                 navigation('/escenario3');
