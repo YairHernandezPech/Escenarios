@@ -15,6 +15,12 @@ const Formulario = () => {
             case '2':
                 navigation('/documents');
                 break;
+            case '3':
+                navigation('/escenario3');
+                break;
+            case '4':
+                navigation('/escenario4');
+                break;
             default:
                 break;
         }
@@ -29,6 +35,8 @@ const Formulario = () => {
                             <option selected>Open this select menu</option>
                             <option value="1">Escenario 1</option>
                             <option value="2">Escenario 2</option>
+                            <option value="3">Escenario 3</option>
+                            <option value="4">Escenario 4</option>
                         </FormSelect>
                     </div>
                 </div>

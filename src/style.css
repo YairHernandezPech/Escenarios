@@ -135,4 +135,25 @@
   transform: translateX(-50%);
 }
 
+.trapecio {
+  min-width: 600px;
+  height: 260px;
+  background-color: gray;
+  clip-path: polygon(0% 0%, 100% 0%, 82% 100%, 18% 100%);
+  position: relative;
+}
+
+.row-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seatscenter {
+  max-width: 400px;
+  margin-top: 7px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
