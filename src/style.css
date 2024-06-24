@@ -135,6 +135,7 @@
   transform: translateX(-50%);
 }
 
+/* escenario 3 */
 .trapecio {
   min-width: 600px;
   height: 260px;
@@ -157,3 +158,29 @@
   justify-content: center;
 }
 
+
+/* indice */
+.indice {
+  max-width: 400px;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.status{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid grey;
+}
+
+.status img {
+  width: 40%;
+}
+
+.status p {
+  text-align: center;
+  width: 60%;
+  color: black;
+}

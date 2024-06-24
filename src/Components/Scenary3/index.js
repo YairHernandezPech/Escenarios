@@ -1,10 +1,9 @@
 import React from 'react';
 import "../../style.css";
 import Asientos from '../Scenary1/Asientos1'
+import Indice from '../layouts/indice/index'
 
-
-
-const Escenario3 = () => {
+const Escenario = () => {
   const seatsLeft = [
     [{id:1, name: "test"}, {id:1, name: "test"}, {id:1, name: "test"}],
     [{id:1, name: "test"}, {id:1, name: "test"}, {id:1, name: "test"}],
@@ -26,7 +25,6 @@ const Escenario3 = () => {
   
   return (
     <div className="stage-container">
-      <div style={{ marginTop: '100px' }}></div>
 
       <div style={{height:"15px", backgroundColor: "#575757", width: "620px" }}></div>
       
@@ -63,5 +61,21 @@ const Escenario3 = () => {
     </div>
   );
 }
+
+const Escenario3 = () => {
+  
+  return (
+    <div style={{display: 'flex', marginTop: '100px', justifyContent:"center", padding: "30px"}} >
+      <Escenario/>
+      <Indice
+        availableImage={"http://localhost:3000/scenaries/scenary3/scenary3.png"}
+        unavailableImage={"http://localhost:3000/scenaries/scenary3/scenary3.png"}
+        occupiedImage={"http://localhost:3000/scenaries/scenary3/scenary3.png"}
+      />
+    </div>
+  );
+}
+
+
 
 export default Escenario3;
