@@ -135,4 +135,52 @@
   transform: translateX(-50%);
 }
 
+/* escenario 3 */
+.trapecio {
+  min-width: 600px;
+  height: 260px;
+  background-color: gray;
+  clip-path: polygon(0% 0%, 100% 0%, 82% 100%, 18% 100%);
+  position: relative;
+}
 
+.row-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seatscenter {
+  max-width: 400px;
+  margin-top: 7px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+/* indice */
+.indice {
+  max-width: 400px;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.status{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid grey;
+}
+
+.status img {
+  width: 40%;
+}
+
+.status p {
+  text-align: center;
+  width: 60%;
+  color: black;
+}
