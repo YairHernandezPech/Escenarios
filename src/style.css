@@ -184,3 +184,19 @@
   width: 60%;
   color: black;
 }
+
+/* escenario 4 */
+.scenario-square{
+  min-width: 500px;
+  height: 230px;
+  background-color: gray;
+  margin: 0px 7px;
+}
+
+.seatscenter4{
+  max-width: 500px;
+  margin-top: 7px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

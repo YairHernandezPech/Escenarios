@@ -20,17 +20,17 @@ const Escenario = () => {
     [{id: 60, name: "test"}, {id: 61, name: "test"}, {id: 62, name: "test"}],
     [{id: 63, name: "test"}, {id: 64, name: "test"}, {id: 65, name: "test"}],
   ];
-  const seats = Array.from({ length: 30 }, (_, i) => i + 1);
+  const seats = Array.from({ length: 40 }, (_, i) => i + 1);
   
   return (
     <div className="stage-container">
 
-      <div style={{height:"15px", backgroundColor: "#575757", width: "620px" }}></div>
+      <div style={{height:"15px", backgroundColor: "#575757", width: "650px" }}></div>
       
       <div class="row-flex">
         <div style={{width: "300px", textAlign: "right"}}>
           {seatsLeft.map((seatrow, rowIndex) => (
-            <div style={{ marginRight: `${-14 * rowIndex}px` }} key={rowIndex}>
+            <div key={rowIndex}>
               {seatrow.map((seat) => (
                 <Asientos key={seat.id} id={seat.id} />
               ))}
@@ -38,11 +38,11 @@ const Escenario = () => {
           ))}
         </div>
         
-        <div class="trapecio"></div>
+        <div class="scenario-square"></div>
 
         <div style={{width: "300px", textAlign: "left"}}>
           {seatsRight.map((seatrow, rowIndex) => (
-            <div style={{ marginLeft: `${-14 * rowIndex}px` }} key={rowIndex}>
+            <div key={rowIndex}>
               {seatrow.map((seat) => (
                 <Asientos key={seat.id} id={seat.id} />
               ))}
@@ -51,7 +51,7 @@ const Escenario = () => {
         </div>
       </div>
 
-      <div class="seatscenter">
+      <div class="seatscenter4">
         {seats.map(seatId => (
             <Asientos key={seatId} id={seatId} />
         ))}
@@ -61,7 +61,7 @@ const Escenario = () => {
   );
 }
 
-const Escenario3 = () => {
+const Escenario4 = () => {
   
   return (
     <div style={{display: 'flex', marginTop: '100px', justifyContent:"center", padding: "30px"}} >
@@ -73,4 +73,4 @@ const Escenario3 = () => {
 
 
 
-export default Escenario3;
+export default Escenario4;
