@@ -1,4 +1,71 @@
-/* General styles for seats */
+/* Escenario 1*/
+.header {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  /* Ajusta la altura según sea necesario */
+}
+
+.header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+.header-text {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  /* Espacio desde el borde izquierdo */
+  transform: translateY(-50%);
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.subtext {
+  display: inline-block;
+  padding: 3px 17px;
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  font-weight: normal;
+  transform: translateY(-15%);
+}
+
+
+/*----------------------------------------------------Style Fragment-----------------------------------------------------*/
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.content-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px; /* Puedes ajustar esto según sea necesario */
+  margin: 0 auto;
+}
+
+.left-column {
+  flex: 2;
+  margin-right: 40px; /* Espacio entre las columnas */
+  margin-left: -50px;
+}
+
+.right-column {
+  flex: 1;
+  margin-left: 80px;
+}
+
+
+/*-----------------------------------------------------Styles seats -----------------------------------------------------------------*/
+
 .seat {
   width: 28px;
   height: 28px;
@@ -13,12 +80,23 @@
   color: white;
 }
 
+/*Estado disponible*/
 .available {
   background-color: transparent;
 }
 
-.unavailable {
+/*Estado no disponible*/
+.seat.unavailable {
   background-color: #4781FF;
+  border: 0;
+}
+
+/*Estado ocupado*/
+.seat.occupied {
+  cursor: not-allowed;
+  background-color: rgb(141, 137, 137);
+  line-height: 29px;
+  border: 0;
 }
 
 /* Stage and seats container */
@@ -27,15 +105,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 700px;/* Ajuste el ancho según sea necesario */
+  width: 700px;
+  /* Ajuste el ancho según sea necesario */
   margin: auto;
 }
+
 .seats-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  max-width: calc(15 * 45px); /* 15 asientos * (28px ancho + 10px gap) */
+  max-width: calc(15 * 45px);
+  /* 15 asientos * (28px ancho + 10px gap) */
   margin: auto;
 }
 
@@ -99,19 +180,59 @@
   right: -35px;
 }
 
-.square {
+
+.square_left {
   position: absolute;
   background-color: rgb(139, 134, 134);
   width: 30px;
   height: 30px;
   bottom: -45px;
-}
-
-.square.left {
   left: -15px;
 }
 
-.square.right {
+.square2_left {
+  position: absolute;
+  background-color: rgb(139, 134, 134);
+  width: 30px;
+  height: 30px;
+  bottom: -90px;
+  left: -15px;
+}
+
+.square3_left {
+  position: absolute;
+  background-color: rgb(139, 134, 134);
+  width: 30px;
+  height: 30px;
+  bottom: -135px;
+  left: -15px;
+}
+
+
+.square_right {
+  position: absolute;
+  background-color: rgb(139, 134, 134);
+  width: 30px;
+  height: 30px;
+  bottom: -45px;
+  right: -15px;
+}
+
+.square2_right {
+  position: absolute;
+  background-color: rgb(139, 134, 134);
+  width: 30px;
+  height: 30px;
+  bottom: -90px;
+  right: -15px;
+}
+
+.square3_right {
+  position: absolute;
+  background-color: rgb(139, 134, 134);
+  width: 30px;
+  height: 30px;
+  bottom: -135px;
   right: -15px;
 }
 
@@ -135,6 +256,114 @@
   transform: translateX(-50%);
 }
 
+/*-----------------------------------------------------Styles Simblogia -----------------------------------------------------------------*/
+
+.custom-container {
+  width: 700px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.377);
+  background-color: white;
+  margin: 10px auto;
+  padding: 20px;
+}
+
+.icon img {
+  width: 200px; /* Tamaño de la imagen ajustado */
+  height: auto;
+}
+
+.color-box {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  border-radius: 20%;
+}
+
+.diss {
+  background-color: transparent;
+  border: 1px solid rgb(141, 137, 137);
+}
+
+.diisnot {
+  background-color: #4781FF;
+}
+
+.ocup {
+  background-color: rgb(141, 137, 137);
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  line-height: 28px;
+}
+
+.divider {
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+.col-3.icon {
+  flex: 0 0 auto;
+  margin-right: 20px;
+}
+
+.col-9 {
+  flex: 1;
+}
+
+.text-margin-left {
+  margin-left: 50px; 
+}
+
+
+.row.mb-3.align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+
+/* Consultas de medios (Media Queries) */
+
+@media (max-width: 1200px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .left-column, .right-column {
+        margin-right: 0;
+        width: 100%;
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .stage-container {
+        width: 100%;
+        margin: 20px;
+    }
+
+    .stage {
+        width: 100%;
+        height: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .seat {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    .color-box {
+        width: 20px;
+        height: 20px;
+    }
+
+    .text-margin-left {
+        margin-left: 20px;
+    }
+}
 /* escenario 3 */
 .trapecio {
   min-width: 600px;

@@ -1,23 +1,23 @@
-import "../../style.css";
 import React, { useState } from "react";
+import "../../style.css";
 
-const Asientos = ({ id }) => {
+const Asientos1 = ({ id }) => {
 
-    const [available, setAvailable] = useState(true);
+    const [estado, setEstado] = useState(true);
 
     const handleClick = () => {
-        setAvailable(!available);
+        setEstado(!estado);
     };
 
     return (
         <div
-            className={`seat ${available ? 'available' : 'unavailable'}`}
+            className={`seat ${estado ? 'available' : 'unavailable'}`}
             onClick={handleClick}
         >
-            {id}
+            {!estado && id}
         </div>
         // <p>Icono de café: <i className="fa-regular fa-user"></i></p>
     );
 }
 
-export default Asientos;
+export default Asientos1;
