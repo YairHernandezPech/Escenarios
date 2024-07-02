@@ -14,7 +14,7 @@ const Asientos1 = ({ id }) => {
             className={`seat ${estado ? 'available' : 'unavailable'}`}
             onClick={handleClick}
         >
-            {!estado && id}
+            {id}
         </div>
         // <p>Icono de café: <i className="fa-regular fa-user"></i></p>
     );

@@ -429,3 +429,11 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.seatscenter2{
+  max-width: 500px;
+  margin-top: 7px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

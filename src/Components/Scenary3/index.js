@@ -1,7 +1,6 @@
 import React from 'react';
 import "../../style.css";
-import Asientos from '../Scenary1/Asientos1'
-import Indice from '../layouts/indice/index'
+import Asientos from '../componentes/Asientos';
 
 const Escenario = () => {
   const seatsLeft = [

@@ -1,6 +1,6 @@
 import React from 'react';
 import "../../style.css";
-import Asientos from '../Scenary1/Asientos1'
+import Asientos from '../componentes/Asientos';
 import Indice from '../layouts/indice/index'
 
 const Escenario = () => {

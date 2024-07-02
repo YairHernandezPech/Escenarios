@@ -1,5 +1,5 @@
 import React from 'react';
-import Asientos1 from '../Scenary1/Asientos1';
+import Asientos from '../componentes/Asientos';
 import "../../style.css";
 
 const Escenario1 = () => {
@@ -27,7 +27,7 @@ const Escenario1 = () => {
                         </div>
                         <div className="seats-container">
                             {seats.map(seatId => (
-                                <Asientos1 key={seatId} id={seatId} />
+                                <Asientos key={seatId} id={seatId} />
                             ))}
                         </div>
                     </div>
