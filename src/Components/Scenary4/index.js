@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import "../../style.css";
-import Asientos from '../componentes/Asientos';
+import Asientos from '../../Components/componentes/Asientos'
+import Symbology from '../componentes/symbology'
+import Header from '../componentes/header'
 import Indice from '../layouts/indice/index'
+import img1 from "../../img/img1.png";
+import img2 from "../../img/img2.png";
+import img3 from "../../img/img3.png";
 
 const Escenario = () => {
   const seatsLeft = [
@@ -64,10 +69,19 @@ const Escenario = () => {
 const Escenario4 = () => {
   
   return (
-    <div style={{display: 'flex', marginTop: '100px', justifyContent:"center", padding: "30px"}} >
-      <Escenario/>
-      
-    </div>
+    <Fragment>
+      <Header />
+      <div className="main-container">
+        <div className="content-container">
+          <div className="left-column" style={{display: "flex"}}>
+            <Escenario/>
+          </div>
+          <div className="right-column">
+            <Symbology imgDis = {img1} imgNoDist = {img2} imgOcup = {img3}  />
+          </div>
+        </div>
+      </div>
+    </Fragment>
   );
 }
 
