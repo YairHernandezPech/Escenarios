@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import "../../style.css";
 import Asientos from '../Scenary1/Asientos1'
+import Symbology from '../Scenary1/symbology'
+import Header from '../Scenary1/header'
 import Indice from '../layouts/indice/index'
 
 const Escenario = () => {
@@ -64,10 +66,19 @@ const Escenario = () => {
 const Escenario3 = () => {
   
   return (
-    <div style={{display: 'flex', marginTop: '100px', justifyContent:"center", padding: "30px"}} >
-      <Escenario/>
-      
-    </div>
+    <Fragment>
+      <Header />
+      <div className="main-container">
+        <div className="content-container">
+          <div className="left-column" style={{display: "flex"}}>
+            <Escenario/>
+          </div>
+          <div className="right-column">
+            <Symbology />
+          </div>
+        </div>
+      </div>
+    </Fragment>
   );
 }
 
