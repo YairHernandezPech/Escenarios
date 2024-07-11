@@ -2,9 +2,9 @@ import { Fragment } from "react";
 import Header from "../componentes/header";
 import Escenario2 from "./Esceario2";
 import Symbology from "../componentes/symbology";
-import img1 from "../../img/img1.png";
-import img2 from "../../img/img2.png";
-import img3 from "../../img/img3.png";
+import img4 from "../../img/img4.png";
+import img5 from "../../img/img5.png";
+import img6 from "../../img/img6.png";
 
 const AppScenary2 = () => {
     return (
@@ -16,7 +16,7 @@ const AppScenary2 = () => {
                         <Escenario2 />
                     </div>
                     <div className="right-column">
-                        <Symbology imgDis = {img1} imgNoDist = {img2} imgOcup = {img3}  />
+                        <Symbology imgDis = {img4} imgNoDist = {img5} imgOcup = {img6}  />
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../style.css";
 
-const Asientos1 = ({ id }) => {
+const Asientos = ({ id }) => {
 
     const [estado, setEstado] = useState(true);
 
@@ -14,10 +14,11 @@ const Asientos1 = ({ id }) => {
             className={`seat ${estado ? 'available' : 'unavailable'}`}
             onClick={handleClick}
         >
-            {id}
+            {/* {id} */}
+            {!estado && <span className="seat-id">{id}</span>}
         </div>
         // <p>Icono de café: <i className="fa-regular fa-user"></i></p>
     );
 }
 
-export default Asientos1;
+export default Asientos;

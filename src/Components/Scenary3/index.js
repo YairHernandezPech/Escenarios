@@ -3,10 +3,9 @@ import "../../style.css";
 import Asientos from '../../Components/componentes/Asientos'
 import Symbology from '../componentes/symbology'
 import Header from '../componentes/header'
-import Indice from '../layouts/indice/index'
-import img1 from "../../img/img1.png";
-import img2 from "../../img/img2.png";
-import img3 from "../../img/img3.png";
+import img7 from "../../img/img7.png";
+import img8 from "../../img/img8.png";
+import img9 from "../../img/img9.png";
 
 const Escenario = () => {
   const seatsLeft = [
@@ -30,7 +29,7 @@ const Escenario = () => {
   return (
     <div className="stage-container">
 
-      <div style={{height:"15px", backgroundColor: "#575757", width: "620px" }}></div>
+      <div style={{height:"15px", backgroundColor: "#b023b3", width: "620px" }}></div>
       
       <div class="row-flex">
         <div style={{width: "300px", textAlign: "right"}}>
@@ -77,7 +76,7 @@ const Escenario3 = () => {
             <Escenario/>
           </div>
           <div className="right-column">
-            <Symbology imgDis = {img1} imgNoDist = {img2} imgOcup = {img3}  />
+            <Symbology imgDis = {img7} imgNoDist = {img8} imgOcup = {img9}  />
           </div>
         </div>
       </div>
