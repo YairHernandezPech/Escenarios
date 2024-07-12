@@ -2,9 +2,6 @@ import { Fragment } from "react";
 import Header from "../componentes/header";
 import Escenario2 from "./Esceario2";
 import Symbology from "../componentes/symbology";
-import img4 from "../../img/img4.png";
-import img5 from "../../img/img5.png";
-import img6 from "../../img/img6.png";
 
 const AppScenary2 = () => {
     return (
@@ -16,10 +13,11 @@ const AppScenary2 = () => {
                         <Escenario2 />
                     </div>
                     <div className="right-column">
-                        <Symbology imgDis = {img4} imgNoDist = {img5} imgOcup = {img6}  />
+                        <Symbology/>
                     </div>
                 </div>
             </div>
+            <button type="button" class="btn b-rigth"  style={{transform: 'translateY(80%)'}}>Continuar</button>
         </Fragment>
     );
 }

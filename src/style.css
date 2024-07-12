@@ -268,65 +268,22 @@
 /*-----------------------------------------------------Styles Simblogia -----------------------------------------------------------------*/
 
 .custom-container {
-  width: 700px;
+  width: 600px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.377);
   background-color: white;
-  margin: 10px auto;
-  padding: 20px;
+  margin: 80px auto;
+  padding: 50px;
 }
 
 .icon img {
-  width: 200px; /* Tamaño de la imagen ajustado */
+  width: 80px; /* Tamaño de la imagen ajustado */
   height: auto;
-}
-
-.color-box {
-  width: 28px;
-  height: 28px;
-  margin-right: 10px;
-  border-radius: 20%;
-}
-
-.diss {
-  background-color: transparent;
-  border: 1px solid rgb(141, 137, 137);
-}
-
-.diisnot {
-  background-color: #EB39EF;
-}
-
-.ocup {
-  background-color: rgb(141, 137, 137);
-  color: white;
-  display: inline-block;
-  cursor: pointer;
-  text-align: center;
-  line-height: 28px;
 }
 
 .divider {
   border-top: 1px solid #ddd;
   margin: 20px 0;
-}
-.col-3.icon {
-  flex: 0 0 auto;
-  margin-right: 20px;
-}
-
-.col-9 {
-  flex: 1;
-}
-
-.text-margin-left {
-  margin-left: 50px; 
-}
-
-
-.row.mb-3.align-items-center {
-  display: flex;
-  align-items: center;
 }
 
 
@@ -445,4 +402,19 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+/*-------------------------------------------------------Boton de continuar---------------------------------*/
+.b-rigth {
+  position: absolute;
+  right: 80px;
+  height: 45px;
+  width: 120px;
+  background-color: #58b60b;
+  color: white;
+
+}
+.b-rigth:hover {
+  background-color: #60ca0a;
+  color: white;
 }

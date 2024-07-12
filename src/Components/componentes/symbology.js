@@ -1,35 +1,35 @@
 import React from 'react';
 import "../../style.css";
-const Symbology = ({imgDis,imgNoDist,imgOcup}) => {
+import img1 from "../../img/img1.png";
+import img2 from "../../img/img2.png";
+import img3 from "../../img/img3.png";
+const Symbology = () => {
     return ( 
         <div className="custom-container">
         <div className="row mb-3 align-items-center">
             <div className="col-3 icon">
-                <img src={imgDis} alt="Asiento No disponible" />
+                <img src={img1} alt="Asiento No disponible" />
             </div>
-            <div className="col-9 d-flex align-items-center text-margin-left">
-                <div className="color-box diss"></div>
-                <span>Asiento Disponible</span>
+            <div className="col-9">
+                <span>Available</span>
             </div>
         </div>
         <div className="divider"></div>
         <div className="row mb-3 align-items-center">
             <div className="col-3 icon">
-                <img src={imgNoDist} alt="Asiento Disponible" />
+                <img src={img2} alt="Asiento Disponible" />
             </div>
-            <div className="col-9 d-flex align-items-center text-margin-left">
-                <div className="color-box diisnot"></div>
-                <span>Asiento No Disponible</span>
+            <div className="col-9">
+                <span>Select</span>
             </div>
         </div>
         <div className="divider"></div>
         <div className="row align-items-center">
             <div className="col-3 icon">
-                <img src={imgOcup} alt="Asiento Ocupado" />
+                <img src={img3} alt="Asiento Ocupado" />
             </div>
-            <div className="col-9 d-flex align-items-center text-margin-left">
-                <div className="color-box ocup fa-regular fa-user"></div>
-                <span>Asiento Ocupado</span>
+            <div className="col-9">
+                <span>Not available</span>
             </div>
         </div>
     </div>

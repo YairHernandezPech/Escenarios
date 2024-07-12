@@ -3,9 +3,6 @@ import "../../style.css";
 import Asientos from '../../Components/componentes/Asientos'
 import Symbology from '../componentes/symbology'
 import Header from '../componentes/header'
-import img7 from "../../img/img7.png";
-import img8 from "../../img/img8.png";
-import img9 from "../../img/img9.png";
 
 const Escenario = () => {
   const seatsLeft = [
@@ -76,10 +73,11 @@ const Escenario3 = () => {
             <Escenario/>
           </div>
           <div className="right-column">
-            <Symbology imgDis = {img7} imgNoDist = {img8} imgOcup = {img9}  />
+            <Symbology/>
           </div>
         </div>
       </div>
+      <button type="button" class="btn b-rigth"  style={{transform: 'translateY(200%)'}}>Continuar</button>
     </Fragment>
   );
 }
