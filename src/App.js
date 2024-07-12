@@ -3,10 +3,10 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Formulario from './Components/inicio/form';
-import AppScenary1 from './Components/Scenary1/index';
-import AppScenary2 from './Components/Scenary2/index';
-import Escenario3 from './Components/Scenary3/index';
-import Escenario4 from './Components/Scenary4/index';
+import AppScenary1 from './Components/Escenarios/Scenary1/index';
+import AppScenary2 from './Components/Escenarios/Scenary2/index';
+import Escenario3 from './Components/Escenarios/Scenary3/index';
+import Escenario4 from './Components/Escenarios/Scenary4/index';
 
 function App() {
   return (

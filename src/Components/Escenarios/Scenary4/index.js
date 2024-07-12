@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import "../../style.css";
-import Asientos from '../../Components/componentes/Asientos'
+import "../../../style.css";
+import Asientos from '../componentes/Asientos'
 import Symbology from '../componentes/symbology'
 import Header from '../componentes/header'
 

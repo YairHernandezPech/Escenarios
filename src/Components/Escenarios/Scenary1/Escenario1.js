@@ -1,7 +1,6 @@
 import React from 'react';
 import Asientos from '../componentes/Asientos';
-import "../../style.css";
-
+import "../../../style.css";
 const Escenario1 = () => {
     const seats = Array.from({ length: 70 }, (_, i) => i + 1); // Ajuste del número de asientos
     return (
