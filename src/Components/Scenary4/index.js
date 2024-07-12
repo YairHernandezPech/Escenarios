@@ -77,7 +77,7 @@ const Escenario4 = () => {
           </div>
         </div>
       </div>
-      <button type="button" class="btn b-rigth"  style={{transform: 'translateY(150%)'}}>Continuar</button>
+      <button type="button" class="btn b-rigth"  style={{transform: 'translateY(20%)'}}>Continuar</button>
     </Fragment>
   );
 }
