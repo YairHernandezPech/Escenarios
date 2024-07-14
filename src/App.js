@@ -7,6 +7,7 @@ import AppScenary1 from './Components/Escenarios/Scenary1/index';
 import AppScenary2 from './Components/Escenarios/Scenary2/index';
 import Escenario3 from './Components/Escenarios/Scenary3/index';
 import Escenario4 from './Components/Escenarios/Scenary4/index';
+import Organizador from './Components/Organizador/index';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/escenario2" element={<AppScenary2 />}></Route>
         <Route path="/escenario3" element={<Escenario3 />}></Route>
         <Route path="/escenario4" element={<Escenario4 />}></Route>
+        <Route path="/organizador" element={<Organizador />}></Route>
       </Routes>
     </Router>
 
