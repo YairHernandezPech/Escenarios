@@ -1,27 +1,52 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import "../../../style.css";
 import Asientos from '../componentes/Asientos'
 import Symbology from '../componentes/symbology'
 import Header from '../componentes/header'
+import axios from 'axios';
 
-const Escenario = () => {
+function dividirArray(arr, numPartes) {
+  const n = arr.length;
+  const parteTamaño = Math.floor(n / numPartes);
+  const resto = n % numPartes;
+
+  const partes = [];
+
+  // Distribuir las partes base
+  for (let i = 0; i < numPartes; i++) {
+      partes.push(arr.slice(i * parteTamaño, (i + 1) * parteTamaño));
+  }
+
+  // Distribuir el residuo entre las primeras partes
+  for (let i = 0; i < resto; i++) {
+      partes[i].push(arr[numPartes * parteTamaño + i]);
+  }
+
+  return partes;
+}
+
+const Escenario = ({data, setSelectedSeats}) => {
   const seatsLeft = [
-    [{id: 31, name: "test"}, {id: 32, name: "test"}, {id: 33, name: "test"}],
-    [{id: 34, name: "test"}, {id: 35, name: "test"}, {id: 36, name: "test"}],
-    [{id: 37, name: "test"}, {id: 38, name: "test"}, {id: 39, name: "test"}],
-    [{id: 40, name: "test"}, {id: 41, name: "test"}, {id: 42, name: "test"}],
-    [{id: 43, name: "test"}, {id: 44, name: "test"}, {id: 45, name: "test"}],
-    [{id: 46, name: "test"}, {id: 47, name: "test"}, {id: 48, name: "test"}],
+    dividirArray(dividirArray(data.asientos, 3)[0], 6) [0],
+    dividirArray(dividirArray(data.asientos, 3)[0], 6) [1],
+    dividirArray(dividirArray(data.asientos, 3)[0], 6) [2],
+    dividirArray(dividirArray(data.asientos, 3)[0], 6) [3],
+    dividirArray(dividirArray(data.asientos, 3)[0], 6) [4],
+    dividirArray(dividirArray(data.asientos, 3)[0], 6) [5]
   ];
   const seatsRight = [
-    [{id: 48, name: "test"}, {id: 49, name: "test"}, {id: 50, name: "test"}],
-    [{id: 51, name: "test"}, {id: 52, name: "test"}, {id: 53, name: "test"}],
-    [{id: 54, name: "test"}, {id: 55, name: "test"}, {id: 56, name: "test"}],
-    [{id: 57, name: "test"}, {id: 58, name: "test"}, {id: 59, name: "test"}],
-    [{id: 60, name: "test"}, {id: 61, name: "test"}, {id: 62, name: "test"}],
-    [{id: 63, name: "test"}, {id: 64, name: "test"}, {id: 65, name: "test"}],
+    dividirArray(dividirArray(data.asientos, 3)[1], 6) [0],
+    dividirArray(dividirArray(data.asientos, 3)[1], 6) [1],
+    dividirArray(dividirArray(data.asientos, 3)[1], 6) [2],
+    dividirArray(dividirArray(data.asientos, 3)[1], 6) [3],
+    dividirArray(dividirArray(data.asientos, 3)[1], 6) [4],
+    dividirArray(dividirArray(data.asientos, 3)[1], 6) [5]
   ];
-  const seats = Array.from({ length: 30 }, (_, i) => i + 1);
+  const seats = dividirArray(data.asientos, 3)[2];
+
+
+  
+  
   
   return (
     <div className="stage-container">
@@ -33,7 +58,7 @@ const Escenario = () => {
           {seatsLeft.map((seatrow, rowIndex) => (
             <div style={{ marginRight: `${-14 * rowIndex}px` }} key={rowIndex}>
               {seatrow.map((seat) => (
-                <Asientos key={seat.id} id={seat.id} />
+                <Asientos status={seat.estado} key={seat.asiento_id} id={seat.asiento_id} setSelectedSeats={setSelectedSeats}/>
               ))}
             </div>
           ))}
@@ -45,7 +70,7 @@ const Escenario = () => {
           {seatsRight.map((seatrow, rowIndex) => (
             <div style={{ marginLeft: `${-14 * rowIndex}px` }} key={rowIndex}>
               {seatrow.map((seat) => (
-                <Asientos key={seat.id} id={seat.id} />
+                <Asientos status={seat.estado} key={seat.asiento_id} id={seat.asiento_id} setSelectedSeats={setSelectedSeats}/>
               ))}
             </div>
           ))}
@@ -54,7 +79,7 @@ const Escenario = () => {
 
       <div class="seatscenter">
         {seats.map(seatId => (
-            <Asientos key={seatId} id={seatId} />
+            <Asientos status={seatId.estado} key={seatId.asiento_id} id={seatId.asiento_id} setSelectedSeats={setSelectedSeats}/>
         ))}
       </div>
 
@@ -63,6 +88,45 @@ const Escenario = () => {
 }
 
 const Escenario3 = () => {
+
+  const  [loading, setLoading] = useState(true)
+  const  [data, setData] = useState();
+  const [selectedSeats, setSelectedSeats] = useState([])
+
+  const getData = async () => {
+    try {
+      setLoading(true)
+      const response = await axios.get(
+        `http://localhost:4001/api/v1/escenarios/2`
+      );
+      setData(response.data)
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false)
+    }
+  };
+
+  const handleSubmit = async () => {
+    selectedSeats.map(async id => {
+      try {
+        const response = await axios.put(
+          `http://localhost:4001/api/v1/asientos/${id}`, 
+          { estado: "Ocupado" }
+        );
+        getData()
+      } catch (err) {
+        console.log(err);
+      } finally {
+        console.log("GG");
+      }
+    })
+  };
+
+
+  useEffect(()=>{
+    getData()
+  },[])
   
   return (
     <Fragment>
@@ -70,14 +134,16 @@ const Escenario3 = () => {
       <div className="main-container">
         <div className="content-container">
           <div className="left-column" style={{display: "flex"}}>
-            <Escenario/>
+            { !loading && 
+              <Escenario data={data} setSelectedSeats={setSelectedSeats}/>
+            }
           </div>
           <div className="right-column">
             <Symbology/>
           </div>
         </div>
       </div>
-      <button type="button" class="btn b-rigth"  style={{transform: 'translateY(20%)'}}>Continuar</button>
+      <button type="button" class="btn b-rigth"  style={{transform: 'translateY(20%)'}} onClick={handleSubmit}>Continuar</button>
     </Fragment>
   );
 }

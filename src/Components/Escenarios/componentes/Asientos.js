@@ -1,21 +1,35 @@
 import React, { useState } from "react";
 import "../../../style.css";
 
-const Asientos = ({ id }) => {
+const Asientos = ({ id, status, setSelectedSeats  = undefined }) => {
 
-    const [estado, setEstado] = useState(true);
+    const [estado, setEstado] = useState(status);
 
     const handleClick = () => {
-        setEstado(!estado);
+        if(estado === 'Seleccionado'){
+            setEstado('Disponible');
+            setSelectedSeats((prevSelectedSeats) => {
+                const updatedSelectedSeats = prevSelectedSeats.filter((item) => item !== id);
+                return updatedSelectedSeats;
+            });
+        }
+        if(estado === 'Disponible'){
+            setEstado('Seleccionado');
+            setSelectedSeats((prevSelectedSeats) => {
+                const updatedSelectedSeats = [...prevSelectedSeats];
+                updatedSelectedSeats.push(id)
+                return updatedSelectedSeats;
+            });
+        }
     };
 
     return (
         <div
-            className={`seat ${estado ? 'available' : 'unavailable'}`}
+            className={`seat ${estado}`}
             onClick={handleClick}
         >
             {/* {id} */}
-            {!estado && <span className="seat-id">{id}</span>}
+            <span className="seat-id">{id}</span>
         </div>
         // <p>Icono de café: <i className="fa-regular fa-user"></i></p>
     );

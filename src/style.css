@@ -92,12 +92,16 @@
 }
 
 /*Estado disponible*/
-.available {
+.Disponible {
   background-color: transparent;
 }
 
+.Ocupado {
+  background-color: #8d8989;
+}
+
 /*Estado no disponible*/
-.seat.unavailable {
+.seat.Seleccionado {
   background-color: #EB39EF;
   border: 0;
 }
