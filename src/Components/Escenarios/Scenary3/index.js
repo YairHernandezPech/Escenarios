@@ -58,7 +58,7 @@ const Escenario = ({data, setSelectedSeats}) => {
           {seatsLeft.map((seatrow, rowIndex) => (
             <div style={{ marginRight: `${-14 * rowIndex}px` }} key={rowIndex}>
               {seatrow.map((seat) => (
-                <Asientos status={seat.estado} key={seat.asiento_id} id={seat.asiento_id} setSelectedSeats={setSelectedSeats}/>
+                <Asientos number={seat.numero_asiento.split("-")[1]} status={seat.estado} key={seat.asiento_id} id={seat.asiento_id} setSelectedSeats={setSelectedSeats}/>
               ))}
             </div>
           ))}
@@ -70,7 +70,7 @@ const Escenario = ({data, setSelectedSeats}) => {
           {seatsRight.map((seatrow, rowIndex) => (
             <div style={{ marginLeft: `${-14 * rowIndex}px` }} key={rowIndex}>
               {seatrow.map((seat) => (
-                <Asientos status={seat.estado} key={seat.asiento_id} id={seat.asiento_id} setSelectedSeats={setSelectedSeats}/>
+                <Asientos number={seat.numero_asiento.split("-")[1]} status={seat.estado} key={seat.asiento_id} id={seat.asiento_id} setSelectedSeats={setSelectedSeats}/>
               ))}
             </div>
           ))}
@@ -79,7 +79,7 @@ const Escenario = ({data, setSelectedSeats}) => {
 
       <div class="seatscenter">
         {seats.map(seatId => (
-            <Asientos status={seatId.estado} key={seatId.asiento_id} id={seatId.asiento_id} setSelectedSeats={setSelectedSeats}/>
+            <Asientos number={seatId.numero_asiento.split("-")[1]} status={seatId.estado} key={seatId.asiento_id} id={seatId.asiento_id} setSelectedSeats={setSelectedSeats}/>
         ))}
       </div>
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../../style.css";
 
-const Asientos = ({ id, status, setSelectedSeats  = undefined }) => {
+const Asientos = ({ id, status, setSelectedSeats  = undefined, number=0 }) => {
 
     const [estado, setEstado] = useState(status);
 
@@ -29,7 +29,7 @@ const Asientos = ({ id, status, setSelectedSeats  = undefined }) => {
             onClick={handleClick}
         >
             {/* {id} */}
-            <span className="seat-id">{id}</span>
+            <span className="seat-id">{number}</span>
         </div>
         // <p>Icono de café: <i className="fa-regular fa-user"></i></p>
     );

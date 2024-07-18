@@ -98,6 +98,7 @@
 
 .Ocupado {
   background-color: #8d8989;
+  cursor: not-allowed;
 }
 
 /*Estado no disponible*/
