@@ -61,7 +61,7 @@ const Escenario = ({data, setSelectedSeats}) => {
           ))}
         </div>
         
-        <div class="scenario-square"></div>
+        <div class="scenario-square" style={{height: "250px"}}></div>
 
         <div style={{width: "300px", textAlign: "left"}}>
           {seatsRight.map((seatrow, rowIndex) => (
